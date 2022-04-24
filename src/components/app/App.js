@@ -25,6 +25,7 @@ export class App extends React.Component {
     };
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
+    this.updatePlayListName = this.updatePlayListName.bind(this);
   }
 
   addTrack(track) {
@@ -44,6 +45,10 @@ export class App extends React.Component {
     this.setState({playListTracks: tracks});
   }
 
+  updatePlayListName(name) {
+    this.setState({ playListName: name });
+  }
+
   render() {
     return (
       <div>
@@ -57,6 +62,7 @@ export class App extends React.Component {
             <PlayList playListName={this.state.playListName} 
               playListTracks={this.state.playListTracks} 
               onRemove={this.removeTrack}
+              onNameChange={this.updatePlayListName}
             />
           </div>
         </div>
