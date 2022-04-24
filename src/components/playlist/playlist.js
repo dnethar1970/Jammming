@@ -21,7 +21,7 @@ export class PlayList extends React.Component {
                 <Tracklist tracks={this.props.playListTracks}
                     onRemove={this.props.onRemove}
                     isRemoval={true} />
-                <button class="PlayList-save">SAVE TO SPOTIFY</button>
+                <button class="PlayList-save" onClick={this.props.onSave}>SAVE TO SPOTIFY</button>
             </div>
         )
     }
